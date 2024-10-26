@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Учет расходов{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <nav class="w-64 bg-white shadow-md">
+            <div class="p-4">
+                <h1 class="text-xl font-bold">Система учета расходов</h1>
+            </div>
+            <ul class="mt-4">
+                <li class="hover:bg-gray-200">
+                    <a href="{% url 'expense_list' %}" class="block px-4 py-2">Список расходов</a>
+                </li>
+                <li class="hover:bg-gray-200">
+                    <a href="{% url 'expense_create' %}" class="block px-4 py-2">Добавить расход</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="flex-1 p-8">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>
